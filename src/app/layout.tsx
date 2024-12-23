@@ -1,7 +1,18 @@
 import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
-import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/providers/theme-provider';
+
+import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Metadata } from 'next';
+import ReactQueryProvider from '@/providers/react-query-provider';
+import { Toaster } from '@/components/ui/sonner';
+
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'Slide',
+  description: 'Automate DMs and comments on Instagram',
+};
 
 export default function RootLayout({
   children,
@@ -11,14 +22,14 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
-        <body suppressHydrationWarning>
+        <body suppressHydrationWarning className={jakarta.className}>
           <ThemeProvider
             enableSystem
             attribute={'class'}
             defaultTheme='system'
             disableTransitionOnChange
           >
-            <main>{children}</main>
+            <ReactQueryProvider>{children}</ReactQueryProvider>
             <Toaster />
           </ThemeProvider>
         </body>

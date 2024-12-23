@@ -15,7 +15,7 @@ import UpgradeCard from '../sidebar/upgrade';
 import CreateAutomation from '../create-automation';
 import Search from './search';
 import { Notifications } from './notifications';
-import MainBreadCrumb from '../main-bread-crumb';
+import MainBreadCrumb from '../../bread-crumbs/main-bread-crumb';
 
 type Props = {
   slug: string;
