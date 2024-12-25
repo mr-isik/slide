@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-import WebsiteNav from "@/components/global/navbar"
-import Hero from "@/components/sections/hero"
-import Pricing from "@/components/sections/pricing"
+import WebsiteNav from '@/components/global/navbar'
+import Hero from '@/components/sections/hero'
+import Pricing from '@/components/sections/pricing'
 
 const Home = () => {
   return (

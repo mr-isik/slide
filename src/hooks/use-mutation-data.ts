@@ -4,8 +4,8 @@ import {
   useMutation,
   useMutationState,
   useQueryClient,
-} from "@tanstack/react-query"
-import { toast } from "sonner"
+} from '@tanstack/react-query'
+import { toast } from 'sonner'
 
 export const useMutationData = (
   mutationKey: MutationKey,
@@ -22,7 +22,7 @@ export const useMutationData = (
         onSuccess()
       }
 
-      return toast(data?.status === 200 ? "Success" : "Error", {
+      return toast(data?.status === 200 ? 'Success' : 'Error', {
         description: data?.data,
       })
     },

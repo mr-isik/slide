@@ -1,16 +1,16 @@
-import React from "react"
+import React from 'react'
 
 import {
   Sheet as ShadcnSheet,
   SheetContent,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from '@/components/ui/sheet'
 
 type Props = {
   trigger: React.ReactNode
   children: React.ReactNode
   className?: string
-  side: "left" | "right"
+  side: 'left' | 'right'
 }
 
 const Sheet = ({ children, trigger, className, side }: Props) => {

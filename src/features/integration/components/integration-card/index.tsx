@@ -1,12 +1,12 @@
-import React from "react"
+import React from 'react'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 
 type Props = {
   title: string
   description: string
   icon: React.ReactNode
-  strategy: "INSTAGRAM" | "CRM"
+  strategy: 'INSTAGRAM' | 'CRM'
 }
 
 const IntegrationCard = ({ description, icon, strategy, title }: Props) => {

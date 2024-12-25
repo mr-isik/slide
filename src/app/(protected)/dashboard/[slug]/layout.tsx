@@ -1,16 +1,16 @@
-import React from "react"
+import React from 'react'
 import {
   PrefetchUserAutomations,
   PrefetchUserProfile,
-} from "@/react-query/prefetch"
+} from '@/react-query/prefetch'
 import {
   dehydrate,
   HydrationBoundary,
   QueryClient,
-} from "@tanstack/react-query"
+} from '@tanstack/react-query'
 
-import InfoBar from "@/components/global/infobar/index"
-import Sidebar from "@/components/global/sidebar"
+import InfoBar from '@/components/global/infobar/index'
+import Sidebar from '@/components/global/sidebar'
 
 type Props = {
   children: React.ReactNode

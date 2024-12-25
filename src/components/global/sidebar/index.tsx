@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
-import React from "react"
-import { HelpDuoToneWhite } from "@/icons"
-import { LogoSmall } from "@/svgs/logo-small"
+import React from 'react'
+import { HelpDuoToneWhite } from '@/icons'
+import { LogoSmall } from '@/svgs/logo-small'
 
-import { usePaths } from "@/hooks/user-nav"
-import { Separator } from "@/components/ui/separator"
+import { usePaths } from '@/hooks/user-nav'
+import { Separator } from '@/components/ui/separator'
 
-import ClerkAuthState from "../clerk-auth-state"
-import { SubscriptionPlan } from "../subscription-plan"
-import Items from "./items"
-import UpgradeCard from "./upgrade"
+import ClerkAuthState from '../clerk-auth-state'
+import { SubscriptionPlan } from '../subscription-plan'
+import Items from './items'
+import UpgradeCard from './upgrade'
 
 type Props = {
   slug: string

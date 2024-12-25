@@ -1,5 +1,5 @@
-import React from "react"
-import { InstagramBlue, PlaneBlue } from "@/icons"
+import React from 'react'
+import { InstagramBlue, PlaneBlue } from '@/icons'
 
 type Props = {
   type: string
@@ -14,17 +14,17 @@ const ActiveTrigger = ({ type, keywords }: Props) => {
   return (
     <div className="bg-background-80 p-3 rounded-xl w-full">
       <div className="flex gap-x-2 items-center">
-        {type === "COMMENT" ? <InstagramBlue /> : <PlaneBlue />}
+        {type === 'COMMENT' ? <InstagramBlue /> : <PlaneBlue />}
         <p className="text-lg">
-          {type === "COMMENT"
-            ? "User comments on my post."
-            : "Sends me a direct message."}
+          {type === 'COMMENT'
+            ? 'User comments on my post.'
+            : 'Sends me a direct message.'}
         </p>
       </div>
       <p className="text-text-secondary">
-        {type === "COMMENT"
-          ? "If the user comments on a video that is setup to listen for keywords, this automation will fire"
-          : "If the user sends a direct message that contains a keyword, this automation will fire"}
+        {type === 'COMMENT'
+          ? 'If the user comments on a video that is setup to listen for keywords, this automation will fire'
+          : 'If the user sends a direct message that contains a keyword, this automation will fire'}
       </p>
       <div className="flex gap-2 mt-5 flex-wrap">
         {keywords.map((keyword) => (

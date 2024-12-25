@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { combineReducers, configureStore } from "@reduxjs/toolkit"
-import { TypedUseSelectorHook, useSelector } from "react-redux"
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { TypedUseSelectorHook, useSelector } from 'react-redux'
 
-import AutomationReducer from "./slices/automation"
+import AutomationReducer from './slices/automation'
 
 const rootReducer = combineReducers({
   AutomationReducer,

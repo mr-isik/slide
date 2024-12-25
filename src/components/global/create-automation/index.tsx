@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import React, { useMemo } from "react"
-import { AutomationDuoToneWhite } from "@/icons"
-import { v4 } from "uuid"
+import React, { useMemo } from 'react'
+import { AutomationDuoToneWhite } from '@/icons'
+import { v4 } from 'uuid'
 
-import { useCreateAutomation } from "@/hooks/use-automations"
-import { Button } from "@/components/ui/button"
+import { useCreateAutomation } from '@/hooks/use-automations'
+import { Button } from '@/components/ui/button'
 
-import Loader from "../loader"
+import Loader from '../loader'
 
 const CreateAutomation = () => {
   const mutationId = useMemo(() => v4(), [])
@@ -18,7 +18,7 @@ const CreateAutomation = () => {
     <Button
       onClick={() =>
         mutate({
-          name: "Untitled",
+          name: 'Untitled',
           id: mutationId,
           createdAt: new Date(),
           keywords: [],

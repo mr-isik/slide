@@ -1,16 +1,16 @@
-import React from "react"
-import { getAutomationInfo } from "@/actions/automations"
-import ThenNode from "@/features/automation/components/then/node"
-import Trigger from "@/features/automation/components/trigger"
-import { Warning } from "@/icons"
-import { PrefetchUserAutomation } from "@/react-query/prefetch"
+import React from 'react'
+import { getAutomationInfo } from '@/actions/automations'
+import ThenNode from '@/features/automation/components/then/node'
+import Trigger from '@/features/automation/components/trigger'
+import { Warning } from '@/icons'
+import { PrefetchUserAutomation } from '@/react-query/prefetch'
 import {
   dehydrate,
   HydrationBoundary,
   QueryClient,
-} from "@tanstack/react-query"
+} from '@tanstack/react-query'
 
-import AutomationsBreadCrumb from "@/components/bread-crumbs/automations-bread-crumb"
+import AutomationsBreadCrumb from '@/components/bread-crumbs/automations-bread-crumb'
 
 export async function generateMetadata({
   params,

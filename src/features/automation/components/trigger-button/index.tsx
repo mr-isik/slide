@@ -1,7 +1,7 @@
-import React from "react"
-import { BlueAddIcon } from "@/icons"
+import React from 'react'
+import { BlueAddIcon } from '@/icons'
 
-import PopOver from "@/components/global/popover"
+import PopOver from '@/components/global/popover'
 
 type Props = {
   label: string

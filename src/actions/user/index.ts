@@ -1,16 +1,16 @@
-"use server"
+'use server'
 
-import { redirect } from "next/navigation"
-import { currentUser } from "@clerk/nextjs/server"
+import { redirect } from 'next/navigation'
+import { currentUser } from '@clerk/nextjs/server'
 
-import { refreshToken } from "@/lib/fetch"
+import { refreshToken } from '@/lib/fetch'
 
-import { updateIntegration } from "../integrations/queries"
-import { createUser, findUser } from "./queries"
+import { updateIntegration } from '../integrations/queries'
+import { createUser, findUser } from './queries'
 
 export const onCurrentUser = async () => {
   const user = await currentUser()
-  if (!user) return redirect("/sign-up")
+  if (!user) return redirect('/sign-up')
   return user
 }
 
@@ -25,7 +25,7 @@ export const onBoardUser = async () => {
         const time_left = expiresAt ? expiresAt - today.getTime() : 0
         const days = Math.round(time_left / (1000 * 60 * 60 * 24))
         if (days < 5) {
-          console.log("Your integration is about to expire")
+          console.log('Your integration is about to expire')
 
           const refresh = await refreshToken(found.integrations[0].token)
 
@@ -38,7 +38,7 @@ export const onBoardUser = async () => {
           )
 
           if (!update_token) {
-            console.error("Failed to update token")
+            console.error('Failed to update token')
           }
         }
       }

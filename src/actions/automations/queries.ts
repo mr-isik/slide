@@ -1,6 +1,6 @@
-"use server"
+'use server'
 
-import { client } from "@/lib/prisma"
+import { client } from '@/lib/prisma'
 
 export const createAutomation = async (clerkId: string, id?: string) => {
   return await client.user.update({
@@ -25,7 +25,7 @@ export const getAutomations = async (clerkId: string) => {
     select: {
       automations: {
         orderBy: {
-          createdAt: "asc",
+          createdAt: 'asc',
         },
         include: {
           keywords: true,
@@ -75,7 +75,7 @@ export const updateAutomation = async (
 
 export const addListener = async (
   automationId: string,
-  listener: "SMARTAI" | "MESSAGE",
+  listener: 'SMARTAI' | 'MESSAGE',
   prompt: string,
   reply?: string
 ) => {

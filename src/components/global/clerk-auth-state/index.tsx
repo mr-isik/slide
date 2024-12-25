@@ -1,16 +1,16 @@
-import React from "react"
+import React from 'react'
 import {
   ClerkLoading,
   SignedIn,
   SignedOut,
   SignInButton,
   UserButton,
-} from "@clerk/nextjs"
-import { UserIcon } from "lucide-react"
+} from '@clerk/nextjs'
+import { UserIcon } from 'lucide-react'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 
-import Loader from "../loader"
+import Loader from '../loader'
 
 const ClerkAuthState = () => {
   return (

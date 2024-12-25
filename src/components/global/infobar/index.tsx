@@ -1,23 +1,23 @@
-"use client"
+'use client'
 
-import React from "react"
-import { PAGE_BREAD_CRUMBS } from "@/constants/pages"
-import { HelpDuoToneWhite } from "@/icons"
-import { LogoSmall } from "@/svgs/logo-small"
-import { Menu } from "lucide-react"
+import React from 'react'
+import { PAGE_BREAD_CRUMBS } from '@/constants/pages'
+import { HelpDuoToneWhite } from '@/icons'
+import { LogoSmall } from '@/svgs/logo-small'
+import { Menu } from 'lucide-react'
 
-import { usePaths } from "@/hooks/user-nav"
-import { Separator } from "@/components/ui/separator"
+import { usePaths } from '@/hooks/user-nav'
+import { Separator } from '@/components/ui/separator'
 
-import MainBreadCrumb from "../../bread-crumbs/main-bread-crumb"
-import ClerkAuthState from "../clerk-auth-state"
-import CreateAutomation from "../create-automation"
-import Sheet from "../sheet"
-import Items from "../sidebar/items"
-import UpgradeCard from "../sidebar/upgrade"
-import { SubscriptionPlan } from "../subscription-plan"
-import { Notifications } from "./notifications"
-import Search from "./search"
+import MainBreadCrumb from '../../bread-crumbs/main-bread-crumb'
+import ClerkAuthState from '../clerk-auth-state'
+import CreateAutomation from '../create-automation'
+import Sheet from '../sheet'
+import Items from '../sidebar/items'
+import UpgradeCard from '../sidebar/upgrade'
+import { SubscriptionPlan } from '../subscription-plan'
+import { Notifications } from './notifications'
+import Search from './search'
 
 type Props = {
   slug: string
@@ -78,7 +78,7 @@ const InfoBar = ({ slug }: Props) => {
           <CreateAutomation />
           <Notifications />
         </div>
-        <MainBreadCrumb page={page === slug ? "Home" : page} slug={slug} />
+        <MainBreadCrumb page={page === slug ? 'Home' : page} slug={slug} />
       </div>
     )
   )

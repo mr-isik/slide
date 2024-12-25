@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import React from "react"
-import ActivateAutomationButton from "@/features/automation/components/activate-automation-button"
-import { ChevronRight, PencilIcon } from "lucide-react"
+import React from 'react'
+import ActivateAutomationButton from '@/features/automation/components/activate-automation-button'
+import { ChevronRight, PencilIcon } from 'lucide-react'
 
-import { useEditAutomation } from "@/hooks/use-automations"
-import { useMutationDataState } from "@/hooks/use-mutation-data"
-import { useQueryAutomation } from "@/hooks/use-queries"
-import { Input } from "@/components/ui/input"
+import { useEditAutomation } from '@/hooks/use-automations'
+import { useMutationDataState } from '@/hooks/use-mutation-data'
+import { useQueryAutomation } from '@/hooks/use-queries'
+import { Input } from '@/components/ui/input'
 
 type Props = {
   id: string
@@ -19,7 +19,7 @@ const AutomationsBreadCrumb = ({ id }: Props) => {
   const { disableEdit, edit, enableEdit, inputRef, isPending } =
     useEditAutomation(id)
 
-  const { latestVariable } = useMutationDataState(["update-automation"])
+  const { latestVariable } = useMutationDataState(['update-automation'])
 
   // WIP: Use mutation stuff to update the automations
 
@@ -34,7 +34,7 @@ const AutomationsBreadCrumb = ({ id }: Props) => {
             <Input
               ref={inputRef}
               placeholder={
-                isPending ? latestVariable.variables.name : "Add a new name"
+                isPending ? latestVariable.variables.name : 'Add a new name'
               }
               className="bg-transparent h-auto outline-none text-base border-none p-0"
             />

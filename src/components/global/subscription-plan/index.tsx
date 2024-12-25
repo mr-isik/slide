@@ -1,7 +1,7 @@
-import { useQueryUser } from "@/hooks/use-queries"
+import { useQueryUser } from '@/hooks/use-queries'
 
 type Props = {
-  type: "FREE" | "PRO"
+  type: 'FREE' | 'PRO'
   children: React.ReactNode
 }
 

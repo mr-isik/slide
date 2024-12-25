@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from '@/components/ui/popover'
 
 type Props = {
   trigger: React.ReactNode
@@ -20,7 +20,7 @@ const PopOver = ({ children, trigger, className }: Props) => {
       <PopoverContent
         align="end"
         side="bottom"
-        className={cn("bg-[#1d1d1d] shadow-lg", className)}
+        className={cn('bg-[#1d1d1d] shadow-lg', className)}
       >
         {children}
       </PopoverContent>

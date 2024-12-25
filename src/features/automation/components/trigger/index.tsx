@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
-import React from "react"
-import { AUTOMATION_TRIGGERS } from "@/constants/automations"
+import React from 'react'
+import { AUTOMATION_TRIGGERS } from '@/constants/automations'
 
-import { cn } from "@/lib/utils"
-import { useTriggers } from "@/hooks/use-automations"
-import { useQueryAutomation } from "@/hooks/use-queries"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import Loader from "@/components/global/loader"
+import { cn } from '@/lib/utils'
+import { useTriggers } from '@/hooks/use-automations'
+import { useQueryAutomation } from '@/hooks/use-queries'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import Loader from '@/components/global/loader'
 
-import ThenAction from "../then/then-action"
-import TriggerButton from "../trigger-button"
-import ActiveTrigger from "./active"
-import Keywords from "./keywords"
+import ThenAction from '../then/then-action'
+import TriggerButton from '../trigger-button'
+import ActiveTrigger from './active'
+import Keywords from './keywords'
 
 type Props = {
   id: string
@@ -61,10 +61,10 @@ const Trigger = ({ id }: Props) => {
             key={trigger.id}
             onClick={() => onSetTrigger(trigger.type)}
             className={cn(
-              "hover:opacity-80 text-white rounded-xl flex cursor-pointer flex-col p-3 gap-y-2",
+              'hover:opacity-80 text-white rounded-xl flex cursor-pointer flex-col p-3 gap-y-2',
               !types?.find((t) => t === trigger.type)
-                ? "bg-background-80"
-                : "bg-gradient-to-br from-[#3352CC] font-medium to-[#1C2D70]"
+                ? 'bg-background-80'
+                : 'bg-gradient-to-br from-[#3352CC] font-medium to-[#1C2D70]'
             )}
           >
             <div className="flex gap-x-2 items-center">

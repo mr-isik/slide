@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import React from "react"
-import { Trigger } from "@prisma/client"
+import React from 'react'
+import { Trigger } from '@prisma/client'
 
-import { useQueryAutomation } from "@/hooks/use-queries"
+import { useQueryAutomation } from '@/hooks/use-queries'
 
 type Props = {
   id: string
@@ -12,7 +12,7 @@ type Props = {
 const ThenNode = ({ id }: Props) => {
   const { data }: { data: any } = useQueryAutomation(id)
   const commentTrigger = data?.data?.trigger.find(
-    (t: Trigger) => t.type === "COMMENT"
+    (t: Trigger) => t.type === 'COMMENT'
   )
 
   return !data?.data?.listener ? (

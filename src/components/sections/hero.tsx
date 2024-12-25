@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 
 interface HeroProps {
   title?: string
@@ -8,8 +8,8 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({
-  title = "Transform Your Instagram Engagement with Slide",
-  subtitle = "Slide revolutionizes how you connect with your audience on Instagram. Automate responses and engage effortlessly, turning every interaction into a valuable opportunity.",
+  title = 'Transform Your Instagram Engagement with Slide',
+  subtitle = 'Slide revolutionizes how you connect with your audience on Instagram. Automate responses and engage effortlessly, turning every interaction into a valuable opportunity.',
 }) => {
   return (
     <div className="relative min-h-[600px] w-full bg-gradient-to-br from-gray-800 to-gray-900">

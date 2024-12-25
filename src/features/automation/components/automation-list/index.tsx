@@ -1,22 +1,22 @@
-"use client"
+'use client'
 
-import React, { useMemo } from "react"
-import Link from "next/link"
-import moment from "moment"
+import React, { useMemo } from 'react'
+import Link from 'next/link'
+import moment from 'moment'
 
-import { cn } from "@/lib/utils"
-import { useMutationDataState } from "@/hooks/use-mutation-data"
-import { useQueryAutomations } from "@/hooks/use-queries"
-import { usePaths } from "@/hooks/user-nav"
-import { Button } from "@/components/ui/button"
-import CreateAutomation from "@/components/global/create-automation"
-import GradientButton from "@/components/global/gradient-button"
+import { cn } from '@/lib/utils'
+import { useMutationDataState } from '@/hooks/use-mutation-data'
+import { useQueryAutomations } from '@/hooks/use-queries'
+import { usePaths } from '@/hooks/user-nav'
+import { Button } from '@/components/ui/button'
+import CreateAutomation from '@/components/global/create-automation'
+import GradientButton from '@/components/global/gradient-button'
 
 const AutomationList = () => {
   const { data } = useQueryAutomations()
   const { pathname } = usePaths()
 
-  const { latestVariable } = useMutationDataState(["create-automation"])
+  const { latestVariable } = useMutationDataState(['create-automation'])
 
   const optimisticUiData = useMemo(() => {
     if (latestVariable?.variables) {
@@ -56,15 +56,15 @@ const AutomationList = () => {
               <div className="flex gap-x-2 flex-wrap mt-3">
                 <div
                   className={cn(
-                    "rounded-full px-4 py-1 capitalize",
+                    'rounded-full px-4 py-1 capitalize',
                     (0 + 1) % 1 == 0 &&
-                      "bg-keyword-green/15 border-2 border-keyword-green",
+                      'bg-keyword-green/15 border-2 border-keyword-green',
                     (1 + 1) % 1 == 0 &&
-                      "bg-keyword-purple/15 border-2 border-keyword-purple",
+                      'bg-keyword-purple/15 border-2 border-keyword-purple',
                     (2 + 1) % 1 == 0 &&
-                      "bg-keyword-yellow/15 border-2 border-keyword-yellow",
+                      'bg-keyword-yellow/15 border-2 border-keyword-yellow',
                     (3 + 1) % 1 == 0 &&
-                      "bg-keyword-red/15 border-2 border-keyword-red"
+                      'bg-keyword-red/15 border-2 border-keyword-red'
                   )}
                 >
                   getstarted
@@ -78,10 +78,10 @@ const AutomationList = () => {
           </div>
           <div className="flex flex-col justify-between">
             <p className="capitalize text-sm font-light text-[#9B9CA0]">
-              {moment(automation.createdAt).format("DD MMM YYYY")}
+              {moment(automation.createdAt).format('DD MMM YYYY')}
             </p>
 
-            {automation.listener?.listener === "SMARTAI" ? (
+            {automation.listener?.listener === 'SMARTAI' ? (
               <GradientButton
                 type="BUTTON"
                 className="w-full bg-background-80 text-white hover:bg-background-80"

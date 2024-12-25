@@ -1,6 +1,6 @@
-import React from "react"
-import { INTEGRATION_CARDS } from "@/constants/integrations"
-import IntegrationCard from "@/features/integration/components/integration-card"
+import React from 'react'
+import { INTEGRATION_CARDS } from '@/constants/integrations'
+import IntegrationCard from '@/features/integration/components/integration-card'
 
 const Integrations = () => {
   return (

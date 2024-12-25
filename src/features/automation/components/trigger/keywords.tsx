@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react'
 
-import { useKeywords } from "@/hooks/use-automations"
-import { useMutationDataState } from "@/hooks/use-mutation-data"
-import { useQueryAutomation } from "@/hooks/use-queries"
-import { Input } from "@/components/ui/input"
+import { useKeywords } from '@/hooks/use-automations'
+import { useMutationDataState } from '@/hooks/use-mutation-data'
+import { useQueryAutomation } from '@/hooks/use-queries'
+import { Input } from '@/components/ui/input'
 
 type Props = {
   id: string
@@ -12,7 +12,7 @@ type Props = {
 const Keywords = ({ id }: Props) => {
   const { deleteMutation, isPending, keyword, onKeyPress, onValueChange } =
     useKeywords(id)
-  const { latestVariable } = useMutationDataState(["add-keyword"])
+  const { latestVariable } = useMutationDataState(['add-keyword'])
   const { data }: { data: any } = useQueryAutomation(id)
 
   return (
@@ -34,7 +34,7 @@ const Keywords = ({ id }: Props) => {
                 </div>
               )
           )}
-        {latestVariable && latestVariable.status === "pending" && (
+        {latestVariable && latestVariable.status === 'pending' && (
           <div className="bg-background-90 flex items-center gap-x-2 capitalize text-text-secondary py-1 px-4 rounded-full">
             {latestVariable.variables.keyword}
           </div>
@@ -42,7 +42,7 @@ const Keywords = ({ id }: Props) => {
         <Input
           placeholder="Add keyword..."
           style={{
-            width: Math.min(Math.max(keyword.length || 10, 2), 50) + "ch",
+            width: Math.min(Math.max(keyword.length || 10, 2), 50) + 'ch',
           }}
           value={keyword}
           className="p-0 bg-transparent ring-0 border-none outline-none"

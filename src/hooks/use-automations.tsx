@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from 'react'
 import {
   createAutomations,
   deleteKeyword,
@@ -6,20 +6,20 @@ import {
   saveListener,
   saveTrigger,
   updateAutomationName,
-} from "@/actions/automations"
-import { TRIGGER } from "@/redux/slices/automation"
-import { AppDispatch, useAppSelector } from "@/redux/store"
-import { useDispatch } from "react-redux"
-import * as z from "zod"
+} from '@/actions/automations'
+import { TRIGGER } from '@/redux/slices/automation'
+import { AppDispatch, useAppSelector } from '@/redux/store'
+import { useDispatch } from 'react-redux'
+import * as z from 'zod'
 
-import { useMutationData } from "./use-mutation-data"
-import useZodForm from "./use-zod-form"
+import { useMutationData } from './use-mutation-data'
+import useZodForm from './use-zod-form'
 
 export const useCreateAutomation = (id?: string) => {
   const { isPending, mutate } = useMutationData(
-    ["create-automation"],
+    ['create-automation'],
     () => createAutomations(id),
-    "user-automations"
+    'user-automations'
   )
 
   return { isPending, mutate }
@@ -38,11 +38,11 @@ export const useEditAutomation = (automationId: string) => {
   }
 
   const { isPending, mutate } = useMutationData(
-    ["update-automation"],
+    ['update-automation'],
     /* @ts-expect-error: data type is not inferred correctly */
     (data: { name: string }) =>
       updateAutomationName(automationId, { name: data.name }),
-    "automation-info",
+    'automation-info',
     disableEdit
   )
 
@@ -52,7 +52,7 @@ export const useEditAutomation = (automationId: string) => {
         inputRef.current &&
         !inputRef.current.contains(e.target as Node | null)
       ) {
-        if (inputRef.current.value !== "") {
+        if (inputRef.current.value !== '') {
           mutate({ name: inputRef.current.value })
         } else {
           disableEdit()
@@ -60,10 +60,10 @@ export const useEditAutomation = (automationId: string) => {
       }
     }
 
-    document.addEventListener("mousedown", handleClickedOutside)
+    document.addEventListener('mousedown', handleClickedOutside)
 
     return () => {
-      document.removeEventListener("mousedown", handleClickedOutside)
+      document.removeEventListener('mousedown', handleClickedOutside)
     }
   }, [inputRef, mutate])
 
@@ -71,7 +71,7 @@ export const useEditAutomation = (automationId: string) => {
 }
 
 export const useListener = (id: string) => {
-  const [listener, setListener] = useState<"MESSAGE" | "SMARTAI">("MESSAGE")
+  const [listener, setListener] = useState<'MESSAGE' | 'SMARTAI'>('MESSAGE')
 
   const promptSchema = z.object({
     prompt: z.string().min(1),
@@ -79,11 +79,11 @@ export const useListener = (id: string) => {
   })
 
   const { isPending, mutate } = useMutationData(
-    ["create-listener"],
+    ['create-listener'],
     // @ts-expect-error: data type is not inferred correctly
     (data: { prompt: string; reply: string }) =>
-      saveListener(id, listener || "MESSAGE", data.prompt, data.reply),
-    "automation-info"
+      saveListener(id, listener || 'MESSAGE', data.prompt, data.reply),
+    'automation-info'
   )
 
   const { errors, onFormSubmit, register, reset, watch } = useZodForm(
@@ -92,7 +92,7 @@ export const useListener = (id: string) => {
     mutate
   )
 
-  const onSetListener = (type: "MESSAGE" | "SMARTAI") => setListener(type)
+  const onSetListener = (type: 'MESSAGE' | 'SMARTAI') => setListener(type)
 
   return {
     errors,
@@ -112,14 +112,14 @@ export const useTriggers = (id: string) => {
   )
   const dispatch: AppDispatch = useDispatch()
 
-  const onSetTrigger = (type: "COMMENT" | "DM") =>
+  const onSetTrigger = (type: 'COMMENT' | 'DM') =>
     dispatch(TRIGGER({ trigger: { type } }))
 
   const { isPending, mutate } = useMutationData(
-    ["add-trigger"],
+    ['add-trigger'],
     // @ts-expect-error: data type is not inferred correctly
     (data: { types: string[] }) => saveTrigger(),
-    "automation-info"
+    'automation-info'
   )
 
   const onSaveTrigger = () => mutate({ types })
@@ -127,34 +127,34 @@ export const useTriggers = (id: string) => {
 }
 
 export const useKeywords = (id: string) => {
-  const [keyword, setKeyword] = useState("")
+  const [keyword, setKeyword] = useState('')
 
   const onValueChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setKeyword(e.target.value)
 
   const { isPending, mutate } = useMutationData(
-    ["add-keyword"],
+    ['add-keyword'],
     // @ts-expect-error: data type is not inferred correctly
     (data: { keyword: string }) => saveKeyword(id, data.keyword),
-    "automation-info",
-    () => setKeyword("")
+    'automation-info',
+    () => setKeyword('')
   )
 
   const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       e.preventDefault()
       mutate({
         keyword,
       })
 
-      setKeyword("")
+      setKeyword('')
     }
   }
 
   const { mutate: deleteMutation } = useMutationData(
-    ["delete-keyword"],
+    ['delete-keyword'],
     () => deleteKeyword(id),
-    "automation-info"
+    'automation-info'
   )
 
   return {

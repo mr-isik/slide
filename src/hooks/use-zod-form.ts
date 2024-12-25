@@ -1,8 +1,8 @@
-import { zodResolver } from "@hookform/resolvers/zod"
-import { UseMutateFunction } from "@tanstack/react-query"
-import { useForm } from "react-hook-form"
-import { ZodSchema } from "zod"
-import * as z from "zod"
+import { zodResolver } from '@hookform/resolvers/zod'
+import { UseMutateFunction } from '@tanstack/react-query'
+import { useForm } from 'react-hook-form'
+import { ZodSchema } from 'zod'
+import * as z from 'zod'
 
 const useZodForm = (
   schema: ZodSchema,

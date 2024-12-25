@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-import PaymentCard from "./payment-card"
+import PaymentCard from './payment-card'
 
 type Props = {}
 

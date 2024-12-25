@@ -1,6 +1,6 @@
-"use server"
+'use server'
 
-import { onCurrentUser } from "../user"
+import { onCurrentUser } from '../user'
 import {
   addKeyword,
   addListener,
@@ -10,14 +10,14 @@ import {
   findAutomation,
   getAutomations,
   updateAutomation,
-} from "./queries"
+} from './queries'
 
 export const createAutomations = async (id?: string) => {
   const user = await onCurrentUser()
   try {
     const create = await createAutomation(user.id, id)
-    if (create) return { status: 200, data: "Automation Created!" }
-    return { status: 404, data: "Oops! something went wrong" }
+    if (create) return { status: 200, data: 'Automation Created!' }
+    return { status: 404, data: 'Oops! something went wrong' }
   } catch (error) {
     return { status: 500, data: error }
   }
@@ -43,7 +43,7 @@ export const getAutomationInfo = async (id: string) => {
 
     if (automation) return { status: 200, data: automation }
 
-    return { status: 404, data: "Automation not found" }
+    return { status: 404, data: 'Automation not found' }
   } catch (error) {
     return { status: 500, data: error }
   }
@@ -62,17 +62,17 @@ export const updateAutomationName = async (
   try {
     const update = await updateAutomation(id, data)
 
-    if (update) return { status: 200, data: "Automation updated!" }
+    if (update) return { status: 200, data: 'Automation updated!' }
 
-    return { status: 404, data: "Oops! could not fint automation" }
+    return { status: 404, data: 'Oops! could not fint automation' }
   } catch (error) {
-    return { status: 500, data: "Oops! something went wrong" }
+    return { status: 500, data: 'Oops! something went wrong' }
   }
 }
 
 export const saveListener = async (
   automationId: string,
-  listener: "SMARTAI" | "MESSAGE",
+  listener: 'SMARTAI' | 'MESSAGE',
   prompt: string,
   reply?: string
 ) => {
@@ -81,10 +81,10 @@ export const saveListener = async (
   try {
     const create = await addListener(automationId, listener, prompt, reply)
 
-    if (create) return { status: 200, data: "Listener added!" }
+    if (create) return { status: 200, data: 'Listener added!' }
     return { status: 404, data: "Couldn't add listener" }
   } catch (error) {
-    return { status: 500, data: "Oops! something went wrong" }
+    return { status: 500, data: 'Oops! something went wrong' }
   }
 }
 
@@ -94,10 +94,10 @@ export const saveTrigger = async (automationId: string, trigger: string[]) => {
   try {
     const create = await addTrigger(automationId, trigger)
 
-    if (create) return { status: 200, data: "Trigger added!" }
+    if (create) return { status: 200, data: 'Trigger added!' }
     return { status: 404, data: "Couldn't add trigger" }
   } catch (error) {
-    return { status: 500, data: "Oops! something went wrong" }
+    return { status: 500, data: 'Oops! something went wrong' }
   }
 }
 
@@ -107,10 +107,10 @@ export const saveKeyword = async (automationId: string, keyword: string) => {
   try {
     const create = await addKeyword(automationId, keyword)
 
-    if (create) return { status: 200, data: "Keyword added!" }
+    if (create) return { status: 200, data: 'Keyword added!' }
     return { status: 404, data: "Couldn't add keyword" }
   } catch (error) {
-    return { status: 500, data: "Oops! something went wrong" }
+    return { status: 500, data: 'Oops! something went wrong' }
   }
 }
 
@@ -120,9 +120,9 @@ export const deleteKeyword = async (id: string) => {
   try {
     const deleteKeyword = await deleteKeywordQuery(id)
 
-    if (deleteKeyword) return { status: 200, data: "Keyword deleted!" }
+    if (deleteKeyword) return { status: 200, data: 'Keyword deleted!' }
     return { status: 404, data: "Couldn't delete keyword" }
   } catch (error) {
-    return { status: 500, data: "Oops! something went wrong" }
+    return { status: 500, data: 'Oops! something went wrong' }
   }
 }
