@@ -1,4 +1,8 @@
 import React from "react"
+import Link from "next/link"
+import { Box } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -7,9 +11,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { Button } from "@/components/ui/button"
-import { Box } from "lucide-react"
-import Link from "next/link"
 
 type MenuLinkProps = {
   icon: React.ReactNode

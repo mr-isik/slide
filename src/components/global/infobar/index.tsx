@@ -1,21 +1,23 @@
 "use client"
 
-import { PAGE_BREAD_CRUMBS } from "@/constants/pages"
-import { usePaths } from "@/hooks/user-nav"
-import { Menu } from "lucide-react"
 import React from "react"
-import Sheet from "../sheet"
-import { LogoSmall } from "@/svgs/logo-small"
-import Items from "../sidebar/items"
-import { Separator } from "@/components/ui/separator"
-import ClerkAuthState from "../clerk-auth-state"
+import { PAGE_BREAD_CRUMBS } from "@/constants/pages"
 import { HelpDuoToneWhite } from "@/icons"
-import { SubscriptionPlan } from "../subscription-plan"
-import UpgradeCard from "../sidebar/upgrade"
-import CreateAutomation from "../create-automation"
-import Search from "./search"
-import { Notifications } from "./notifications"
+import { LogoSmall } from "@/svgs/logo-small"
+import { Menu } from "lucide-react"
+
+import { usePaths } from "@/hooks/user-nav"
+import { Separator } from "@/components/ui/separator"
+
 import MainBreadCrumb from "../../bread-crumbs/main-bread-crumb"
+import ClerkAuthState from "../clerk-auth-state"
+import CreateAutomation from "../create-automation"
+import Sheet from "../sheet"
+import Items from "../sidebar/items"
+import UpgradeCard from "../sidebar/upgrade"
+import { SubscriptionPlan } from "../subscription-plan"
+import { Notifications } from "./notifications"
+import Search from "./search"
 
 type Props = {
   slug: string

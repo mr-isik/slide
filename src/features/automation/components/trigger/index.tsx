@@ -1,17 +1,19 @@
 "use client"
 
-import { useQueryAutomation } from "@/hooks/use-queries"
 import React from "react"
-import ActiveTrigger from "./active"
+import { AUTOMATION_TRIGGERS } from "@/constants/automations"
+
+import { cn } from "@/lib/utils"
+import { useTriggers } from "@/hooks/use-automations"
+import { useQueryAutomation } from "@/hooks/use-queries"
+import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import Loader from "@/components/global/loader"
+
 import ThenAction from "../then/then-action"
 import TriggerButton from "../trigger-button"
-import { AUTOMATION_TRIGGERS } from "@/constants/automations"
-import { useTriggers } from "@/hooks/use-automations"
-import { cn } from "@/lib/utils"
+import ActiveTrigger from "./active"
 import Keywords from "./keywords"
-import { Button } from "@/components/ui/button"
-import Loader from "@/components/global/loader"
 
 type Props = {
   id: string

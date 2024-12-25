@@ -1,6 +1,7 @@
-import { Input } from "@/components/ui/input"
-import { SearchIcon } from "lucide-react"
 import React from "react"
+import { SearchIcon } from "lucide-react"
+
+import { Input } from "@/components/ui/input"
 
 const Search = () => {
   return (

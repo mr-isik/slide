@@ -1,11 +1,13 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import React, { useMemo } from "react"
-import Loader from "../loader"
 import { AutomationDuoToneWhite } from "@/icons"
-import { useCreateAutomation } from "@/hooks/use-automations"
 import { v4 } from "uuid"
+
+import { useCreateAutomation } from "@/hooks/use-automations"
+import { Button } from "@/components/ui/button"
+
+import Loader from "../loader"
 
 const CreateAutomation = () => {
   const mutationId = useMemo(() => v4(), [])

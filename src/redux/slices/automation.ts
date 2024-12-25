@@ -1,5 +1,6 @@
-import { duplicateValidation } from "@/lib/utils"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+
+import { duplicateValidation } from "@/lib/utils"
 
 type InitialStateTriggerProps = {
   trigger?: {

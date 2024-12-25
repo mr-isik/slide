@@ -1,10 +1,11 @@
+import React from "react"
+
+import { cn } from "@/lib/utils"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { cn } from "@/lib/utils"
-import React from "react"
 
 type Props = {
   trigger: React.ReactNode

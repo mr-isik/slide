@@ -1,12 +1,13 @@
 "use client"
 
-import { Input } from "@/components/ui/input"
+import React from "react"
 import ActivateAutomationButton from "@/features/automation/components/activate-automation-button"
+import { ChevronRight, PencilIcon } from "lucide-react"
+
 import { useEditAutomation } from "@/hooks/use-automations"
 import { useMutationDataState } from "@/hooks/use-mutation-data"
 import { useQueryAutomation } from "@/hooks/use-queries"
-import { ChevronRight, PencilIcon } from "lucide-react"
-import React from "react"
+import { Input } from "@/components/ui/input"
 
 type Props = {
   id: string

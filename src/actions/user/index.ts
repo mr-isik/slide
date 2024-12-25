@@ -1,10 +1,12 @@
 "use server"
 
-import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
-import { createUser, findUser } from "./queries"
+import { currentUser } from "@clerk/nextjs/server"
+
 import { refreshToken } from "@/lib/fetch"
+
 import { updateIntegration } from "../integrations/queries"
+import { createUser, findUser } from "./queries"
 
 export const onCurrentUser = async () => {
   const user = await currentUser()

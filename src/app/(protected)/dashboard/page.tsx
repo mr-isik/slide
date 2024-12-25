@@ -1,5 +1,5 @@
-import { onBoardUser } from "@/actions/user"
 import { redirect } from "next/navigation"
+import { onBoardUser } from "@/actions/user"
 
 const Page = async () => {
   // Server action onboard the user

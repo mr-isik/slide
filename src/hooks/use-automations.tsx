@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react"
 import {
   createAutomations,
   deleteKeyword,
@@ -6,13 +7,13 @@ import {
   saveTrigger,
   updateAutomationName,
 } from "@/actions/automations"
-import { useMutationData } from "./use-mutation-data"
-import { useEffect, useRef, useState } from "react"
-import * as z from "zod"
-import useZodForm from "./use-zod-form"
+import { TRIGGER } from "@/redux/slices/automation"
 import { AppDispatch, useAppSelector } from "@/redux/store"
 import { useDispatch } from "react-redux"
-import { TRIGGER } from "@/redux/slices/automation"
+import * as z from "zod"
+
+import { useMutationData } from "./use-mutation-data"
+import useZodForm from "./use-zod-form"
 
 export const useCreateAutomation = (id?: string) => {
   const { isPending, mutate } = useMutationData(

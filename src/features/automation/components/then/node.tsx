@@ -1,8 +1,9 @@
 "use client"
 
-import { useQueryAutomation } from "@/hooks/use-queries"
-import { Trigger } from "@prisma/client"
 import React from "react"
+import { Trigger } from "@prisma/client"
+
+import { useQueryAutomation } from "@/hooks/use-queries"
 
 type Props = {
   id: string

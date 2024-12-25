@@ -1,10 +1,10 @@
+import React from "react"
+
 import {
   Sheet as ShadcnSheet,
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
-
-import React from "react"
 
 type Props = {
   trigger: React.ReactNode

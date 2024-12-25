@@ -1,5 +1,5 @@
+import React from "react"
 import { getAutomationInfo } from "@/actions/automations"
-import AutomationsBreadCrumb from "@/components/bread-crumbs/automations-bread-crumb"
 import ThenNode from "@/features/automation/components/then/node"
 import Trigger from "@/features/automation/components/trigger"
 import { Warning } from "@/icons"
@@ -9,7 +9,8 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query"
-import React from "react"
+
+import AutomationsBreadCrumb from "@/components/bread-crumbs/automations-bread-crumb"
 
 export async function generateMetadata({
   params,

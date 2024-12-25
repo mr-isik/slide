@@ -1,5 +1,5 @@
-import { InstagramBlue, PlaneBlue } from "@/icons"
 import React from "react"
+import { InstagramBlue, PlaneBlue } from "@/icons"
 
 type Props = {
   type: string

@@ -1,5 +1,6 @@
-import Loader from "@/components/global/loader"
 import React from "react"
+
+import Loader from "@/components/global/loader"
 
 const Loading = () => {
   return (

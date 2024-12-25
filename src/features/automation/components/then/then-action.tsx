@@ -1,13 +1,15 @@
-import { useListener } from "@/hooks/use-automations"
 import React from "react"
-import TriggerButton from "../trigger-button"
 import { AUTOMATION_LISTENERS } from "@/constants/automations"
-import { SubscriptionPlan } from "@/components/global/subscription-plan"
+
 import { cn } from "@/lib/utils"
-import { Textarea } from "@/components/ui/textarea"
-import { Input } from "@/components/ui/input"
+import { useListener } from "@/hooks/use-automations"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import Loader from "@/components/global/loader"
+import { SubscriptionPlan } from "@/components/global/subscription-plan"
+
+import TriggerButton from "../trigger-button"
 
 type Props = {
   id: string

@@ -1,7 +1,8 @@
-import { SIDEBAR_MENU } from "@/constants/menu"
-import { cn } from "@/lib/utils"
-import Link from "next/link"
 import React from "react"
+import Link from "next/link"
+import { SIDEBAR_MENU } from "@/constants/menu"
+
+import { cn } from "@/lib/utils"
 
 type Props = {
   page: string

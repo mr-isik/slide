@@ -1,7 +1,8 @@
-import CreateAutomation from "@/components/global/create-automation"
+import React from "react"
 import AutomationList from "@/features/automation/components/automation-list"
 import { Check } from "lucide-react"
-import React from "react"
+
+import CreateAutomation from "@/components/global/create-automation"
 
 const Page = () => {
   //WIP: connect real automations list

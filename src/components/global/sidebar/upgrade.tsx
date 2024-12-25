@@ -1,4 +1,5 @@
 import React from "react"
+
 import PaymentButton from "../payment-button"
 
 const UpgradeCard = () => {

@@ -1,7 +1,8 @@
-import Loader from "@/components/global/loader"
-import { Button } from "@/components/ui/button"
-import { ActiveAutomation } from "@/icons/active-automation"
 import React from "react"
+import { ActiveAutomation } from "@/icons/active-automation"
+
+import { Button } from "@/components/ui/button"
+import Loader from "@/components/global/loader"
 
 type Props = {
   id: string

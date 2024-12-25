@@ -1,10 +1,12 @@
 import { ClerkProvider } from "@clerk/nextjs"
+
 import "./globals.css"
+
+import { Metadata } from "next"
+import { Plus_Jakarta_Sans } from "next/font/google"
+import ReactQueryProvider from "@/providers/react-query-provider"
 import { ThemeProvider } from "@/providers/theme-provider"
 
-import { Plus_Jakarta_Sans } from "next/font/google"
-import { Metadata } from "next"
-import ReactQueryProvider from "@/providers/react-query-provider"
 import { Toaster } from "@/components/ui/sonner"
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] })
