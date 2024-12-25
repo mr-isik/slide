@@ -1,25 +1,25 @@
-'use client';
+"use client"
 
-import { usePaths } from '@/hooks/user-nav';
-import { LogoSmall } from '@/svgs/logo-small';
-import React from 'react';
-import Items from './items';
-import { Separator } from '@/components/ui/separator';
-import ClerkAuthState from '../clerk-auth-state';
-import { HelpDuoToneWhite } from '@/icons';
-import { SubscriptionPlan } from '../subscription-plan';
-import UpgradeCard from './upgrade';
+import { usePaths } from "@/hooks/user-nav"
+import { LogoSmall } from "@/svgs/logo-small"
+import React from "react"
+import Items from "./items"
+import { Separator } from "@/components/ui/separator"
+import ClerkAuthState from "../clerk-auth-state"
+import { HelpDuoToneWhite } from "@/icons"
+import { SubscriptionPlan } from "../subscription-plan"
+import UpgradeCard from "./upgrade"
 
 type Props = {
-  slug: string;
-};
+  slug: string
+}
 
 const Sidebar = ({ slug }: Props) => {
-  const { page } = usePaths();
+  const { page } = usePaths()
 
   return (
     <aside
-      className='w-[250px] 
+      className="w-[250px] 
     border-[1px]
     radial 
     fixed 
@@ -34,10 +34,10 @@ const Sidebar = ({ slug }: Props) => {
      top-0 
      m-3 
      rounded-3xl 
-     overflow-hidden'
+     overflow-hidden"
     >
       <div
-        className='flex flex-col 
+        className="flex flex-col 
       gap-y-5
        w-full 
        h-full 
@@ -47,35 +47,35 @@ const Sidebar = ({ slug }: Props) => {
        bg-clip-padding 
        backdrop-filter 
        backdrop--blur__safari 
-       backdrop-blur-3xl'
+       backdrop-blur-3xl"
       >
-        <div className='flex gap-x-2 justify-center p-5 items-center'>
+        <div className="flex gap-x-2 justify-center p-5 items-center">
           <LogoSmall />
         </div>
-        <div className='flex flex-col py-3'>
+        <div className="flex flex-col py-3">
           <Items page={page} slug={slug} />
         </div>
-        <div className='px-16'>
-          <Separator orientation='horizontal' className='bg-[#333336]' />
+        <div className="px-16">
+          <Separator orientation="horizontal" className="bg-[#333336]" />
         </div>
-        <div className='flex flex-col gap-y-5 px-3'>
-          <div className='flex gap-x-2'>
+        <div className="flex flex-col gap-y-5 px-3">
+          <div className="flex gap-x-2">
             <ClerkAuthState />
-            <p className='bg-[9b9ca0]'>Profile</p>
+            <p className="bg-[9b9ca0]">Profile</p>
           </div>
-          <div className='flex gap-x-3'>
+          <div className="flex gap-x-3">
             <HelpDuoToneWhite />
-            <p className='bg-[9b9ca0]'>Help</p>
+            <p className="bg-[9b9ca0]">Help</p>
           </div>
         </div>
-        <SubscriptionPlan type='FREE'>
-          <div className='flex-1 flex flex-col justify-end'>
+        <SubscriptionPlan type="FREE">
+          <div className="flex-1 flex flex-col justify-end">
             <UpgradeCard />
           </div>
         </SubscriptionPlan>
       </div>
     </aside>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

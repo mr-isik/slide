@@ -1,6 +1,6 @@
-'use server';
+"use server"
 
-import { client } from '@/lib/prisma';
+import { client } from "@/lib/prisma"
 
 export const updateIntegration = async (
   id: string,
@@ -15,5 +15,5 @@ export const updateIntegration = async (
       token,
       expiresAt: expire,
     },
-  });
-};
+  })
+}

@@ -4,11 +4,11 @@ import {
   SignedOut,
   SignInButton,
   UserButton,
-} from '@clerk/nextjs';
-import React from 'react';
-import Loader from '../loader';
-import { Button } from '@/components/ui/button';
-import { UserIcon } from 'lucide-react';
+} from "@clerk/nextjs"
+import React from "react"
+import Loader from "../loader"
+import { Button } from "@/components/ui/button"
+import { UserIcon } from "lucide-react"
 
 const ClerkAuthState = () => {
   return (
@@ -20,7 +20,7 @@ const ClerkAuthState = () => {
       </ClerkLoading>
       <SignedOut>
         <SignInButton>
-          <Button className='rounded-xl bg-[#252525] text-white hover:bg-[#252525]/70'>
+          <Button className="rounded-xl bg-[#252525] text-white hover:bg-[#252525]/70">
             <UserIcon />
             Login
           </Button>
@@ -29,14 +29,14 @@ const ClerkAuthState = () => {
       <SignedIn>
         <UserButton>
           <UserButton.UserProfileLink
-            label='Dashboard'
-            url='/dashboard'
+            label="Dashboard"
+            url="/dashboard"
             labelIcon={<UserIcon size={16} />}
           />
         </UserButton>
       </SignedIn>
     </>
-  );
-};
+  )
+}
 
-export default ClerkAuthState;
+export default ClerkAuthState

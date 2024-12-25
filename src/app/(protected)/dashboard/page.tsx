@@ -1,13 +1,13 @@
-import { onBoardUser } from '@/actions/user';
-import { redirect } from 'next/navigation';
+import { onBoardUser } from "@/actions/user"
+import { redirect } from "next/navigation"
 
 const Page = async () => {
   // Server action onboard the user
-  const user = await onBoardUser();
+  const user = await onBoardUser()
   if (user.status === 200 || user.status === 201) {
-    return redirect(`/dashboard/${user.data?.firstname}${user.data?.lastname}`);
+    return redirect(`/dashboard/${user.data?.firstname}${user.data?.lastname}`)
   }
-  return redirect('/sign-in');
-};
+  return redirect("/sign-in")
+}
 
-export default Page;
+export default Page

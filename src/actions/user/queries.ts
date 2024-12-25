@@ -1,6 +1,6 @@
-'use server';
+"use server"
 
-import { client } from '@/lib/prisma';
+import { client } from "@/lib/prisma"
 
 export const findUser = async (clerkId: string) => {
   return await client.user.findUnique({
@@ -18,8 +18,8 @@ export const findUser = async (clerkId: string) => {
         },
       },
     },
-  });
-};
+  })
+}
 
 export const createUser = async (
   clerkId: string,
@@ -42,5 +42,5 @@ export const createUser = async (
       firstname: true,
       lastname: true,
     },
-  });
-};
+  })
+}

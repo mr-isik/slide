@@ -4,8 +4,8 @@ import {
   useMutation,
   useMutationState,
   useQueryClient,
-} from '@tanstack/react-query';
-import { toast } from 'sonner';
+} from "@tanstack/react-query"
+import { toast } from "sonner"
 
 export const useMutationData = (
   mutationKey: MutationKey,
@@ -13,26 +13,26 @@ export const useMutationData = (
   queryKey?: string,
   onSuccess?: () => void
 ) => {
-  const client = useQueryClient();
+  const client = useQueryClient()
   const { mutate, isPending } = useMutation({
     mutationKey,
     mutationFn,
     onSuccess: (data: any) => {
       if (onSuccess) {
-        onSuccess();
+        onSuccess()
       }
 
-      return toast(data?.status === 200 ? 'Success' : 'Error', {
+      return toast(data?.status === 200 ? "Success" : "Error", {
         description: data?.data,
-      });
+      })
     },
     onSettled: async () => {
-      return await client.invalidateQueries({ queryKey: [queryKey] });
+      return await client.invalidateQueries({ queryKey: [queryKey] })
     },
-  });
+  })
 
-  return { isPending, mutate };
-};
+  return { isPending, mutate }
+}
 
 export const useMutationDataState = (mutationKey: MutationKey) => {
   const data = useMutationState({
@@ -41,11 +41,11 @@ export const useMutationDataState = (mutationKey: MutationKey) => {
       return {
         variables: mutation.state.variables as any,
         status: mutation.state.status,
-      };
+      }
     },
-  });
+  })
 
-  const latestVariable = data[data.length - 1];
+  const latestVariable = data[data.length - 1]
 
-  return { latestVariable };
-};
+  return { latestVariable }
+}

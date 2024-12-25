@@ -1,8 +1,8 @@
-import Billing from '@/features/billing';
-import React from 'react';
+import Billing from "@/features/billing"
+import React from "react"
 
 const Settings = () => {
-  return <Billing />;
-};
+  return <Billing />
+}
 
-export default Settings;
+export default Settings
